@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj": {}
+    "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj": {
+    "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
+        "projectUniqueName": "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
         "projectName": "FrameworkActivities",
-        "projectPath": "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
+        "projectPath": "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
         "packagesPath": "C:\\Users\\cfleming\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\obj\\",
+        "outputPath": "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -38,6 +38,10 @@
       "frameworks": {
         "net472": {
           "dependencies": {
+            "ExcelProvider": {
+              "target": "Package",
+              "version": "(, )"
+            },
             "FSharp.Core": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -53,6 +57,10 @@
         },
         "netstandard2.0": {
           "dependencies": {
+            "ExcelProvider": {
+              "target": "Package",
+              "version": "(, )"
+            },
             "FSharp.Core": {
               "target": "Package",
               "version": "[4.7.0, )"

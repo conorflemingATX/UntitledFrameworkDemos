@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
+      "ExcelProvider/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/net45/ExcelProvider.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ExcelProvider.Runtime.dll": {}
+        }
+      },
       "FSharp.Core/4.7.0": {
         "type": "package",
         "compile": {
@@ -63,9 +75,48 @@
         "build": {
           "build/Microsoft.NETFramework.ReferenceAssemblies.net472.targets": {}
         }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Text.Encoding.CodePages/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net461/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
       }
     },
     ".NETStandard,Version=v2.0": {
+      "ExcelProvider/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ExcelProvider.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelProvider.Runtime.dll": {}
+        }
+      },
       "FSharp.Core/4.7.0": {
         "type": "package",
         "compile": {
@@ -142,10 +193,97 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Text.Encoding.CodePages/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "ExcelProvider/1.0.1": {
+      "sha512": "VUCQ0JmXBcIB1LL5YbdEKnI9XxCd1C53Q2Iez1MpP92+EuraR6Y17QUqnhzYApt/EPSKf6t11RJsOxXdtq60uA==",
+      "type": "package",
+      "path": "excelprovider/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excelprovider.1.0.1.nupkg.sha512",
+        "excelprovider.nuspec",
+        "lib/net45/ExcelProvider.Runtime.dll",
+        "lib/net45/ExcelProvider.Runtime.pdb",
+        "lib/netstandard2.0/ExcelProvider.Runtime.deps.json",
+        "lib/netstandard2.0/ExcelProvider.Runtime.dll",
+        "lib/netstandard2.0/ExcelProvider.Runtime.pdb",
+        "typeproviders/fsharp41/net45/ExcelDataReader.DataSet.dll",
+        "typeproviders/fsharp41/net45/ExcelDataReader.dll",
+        "typeproviders/fsharp41/net45/ExcelProvider.DesignTime.dll",
+        "typeproviders/fsharp41/net45/FSharp.Core.dll",
+        "typeproviders/fsharp41/net45/System.ValueTuple.dll",
+        "typeproviders/fsharp41/net45/netstandard.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/ExcelDataReader.DataSet.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/ExcelDataReader.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/ExcelProvider.DesignTime.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/FSharp.Core.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/System.Diagnostics.DiagnosticSource.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/System.Security.Cryptography.Cng.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/System.Security.Cryptography.OpenSsl.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
+        "typeproviders/fsharp41/netcoreapp2.0/netstandard.dll",
+        "typeproviders/fsharp41/netstandard2.0/ExcelDataReader.DataSet.dll",
+        "typeproviders/fsharp41/netstandard2.0/ExcelDataReader.dll",
+        "typeproviders/fsharp41/netstandard2.0/ExcelProvider.DesignTime.dll",
+        "typeproviders/fsharp41/netstandard2.0/FSharp.Core.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Collections.Concurrent.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.IO.FileSystem.Primitives.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Linq.Expressions.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Linq.Queryable.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Linq.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Net.WebHeaderCollection.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.ObjectModel.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Reflection.Emit.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Reflection.TypeExtensions.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Runtime.Numerics.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Security.Cryptography.Cng.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Security.Cryptography.OpenSsl.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Security.Cryptography.Primitives.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Text.RegularExpressions.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Threading.Tasks.Parallel.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Threading.Thread.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Threading.ThreadPool.dll",
+        "typeproviders/fsharp41/netstandard2.0/System.Threading.dll",
+        "typeproviders/fsharp41/netstandard2.0/netstandard.dll"
+      ]
+    },
     "FSharp.Core/4.7.0": {
       "sha512": "6Bf2qzSCaJoP6tTfO+a5muUS7QbyJANqSut73zQvwQ9It5P0ITz9VKseeia2ofco30c55EQ0jA2wf2+A2gpGnw==",
       "type": "package",
@@ -725,14 +863,91 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+      "sha512": "YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/uap10.0.16300/_._",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/uap10.0.16300/_._",
+        "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Encoding.CodePages/4.5.0": {
+      "sha512": "S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
+      "type": "package",
+      "path": "system.text.encoding.codepages/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Text.Encoding.CodePages.dll",
+        "lib/net461/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "ref/netstandard1.3/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/de/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/es/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/fr/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/it/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/ja/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/ko/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/ru/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/zh-hans/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/zh-hant/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "ref/netstandard2.0/System.Text.Encoding.CodePages.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net461/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "system.text.encoding.codepages.4.5.0.nupkg.sha512",
+        "system.text.encoding.codepages.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "ExcelProvider",
       "FSharp.Core >= 4.7.0",
       "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.0"
     ],
     ".NETStandard,Version=v2.0": [
+      "ExcelProvider",
       "FSharp.Core >= 4.7.0",
       "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
@@ -744,11 +959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
+      "projectUniqueName": "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
       "projectName": "FrameworkActivities",
-      "projectPath": "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
+      "projectPath": "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\FrameworkActivity.fsproj",
       "packagesPath": "C:\\Users\\cfleming\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cfleming\\Documents\\UiPath\\UntitledFramework\\FrameworkActivity\\FrameworkActivity\\obj\\",
+      "outputPath": "C:\\Users\\cfleming\\dev\\UntitledUiPathDemos\\demo1\\FrameworkActivity\\FrameworkActivity\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
@@ -775,6 +990,10 @@
     "frameworks": {
       "net472": {
         "dependencies": {
+          "ExcelProvider": {
+            "target": "Package",
+            "version": "(, )"
+          },
           "FSharp.Core": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -790,6 +1009,10 @@
       },
       "netstandard2.0": {
         "dependencies": {
+          "ExcelProvider": {
+            "target": "Package",
+            "version": "(, )"
+          },
           "FSharp.Core": {
             "target": "Package",
             "version": "[4.7.0, )"

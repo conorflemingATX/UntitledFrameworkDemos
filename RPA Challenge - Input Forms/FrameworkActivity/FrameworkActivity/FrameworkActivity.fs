@@ -8,10 +8,12 @@ type Activity () =
 
     [<Category("Input")>]
     [<RequiredArgument>]
+    member val ConfigPath = new InArgument<string> () with get, set
+
+    [<Category("Input")>]
     member val State = new InArgument<string> () with get, set
 
     [<Category("Input")>]
-    [<RequiredArgument>]
     member val Message = new InArgument<string> () with get, set
 
     [<Category("Output")>]

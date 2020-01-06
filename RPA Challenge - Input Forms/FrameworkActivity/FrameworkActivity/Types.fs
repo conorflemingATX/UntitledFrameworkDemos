@@ -1,9 +1,35 @@
 module Types
 
 (* 
-    I have been reading up from "Domain Modelling Made Functional" by Scott Wlaschin, to see if I can't make better sense of this and to an extent I think I have some pretty good ideas of how this is supposed to go. Especially, now that I know the general pattern for what I am doing with having a stateless process be rehydrated everytime is called a "Saga", and the fact that I can have the state be a discrimiated union with cases for every stage of the process each containing different datatypes modelling the state at every point of the process.
+    What are the stages that the process goes through?
 
-    I am also thinking about how to use contrained types properly for use in validation.
+    1. Init
+    2. Read Excel file
+    3. Validate Excel data
+    4. Send to input form
 
-    What I really need to do is to simply sit down, and really try to get to grips with everything, but so far that kind of dedication has eluded me.
 *)
+
+type NotImplemented = exn
+
+// Doesn't really need a config, but I'm adding one for future reference.
+type Config = NotImplemented
+
+type UnvalidatedExcelState = NotImplemented
+
+type ValidatedExcelState = NotImplemented
+
+type UpdateInfo = NotImplemented
+
+(* 
+    I'm honestly not 100% about doing it like this. I know that I want a state machine structure like in 'DDD Made Functional which is similar to this, but having these different stages like this AND completely different data structures might be redundant?
+
+    I have split the config out into a pair with assoc. state, considering this will have to be serialized, is that a good idea?
+ *)
+type State =
+    | Init
+    | ReadingExcel of Config
+    | ValidatingExcel of Config * UnvalidatedExcelState
+    | UpdatingInput of Config * ValidatedExcelState
+    | UpdateComplete of Config * UpdateInfo
+

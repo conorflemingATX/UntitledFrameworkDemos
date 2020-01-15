@@ -1,35 +1,51 @@
 module Types
 
-(* 
-    What are the stages that the process goes through?
+open FSharp.Interop.Excel
 
-    1. Init
-    2. Read Excel file
-    3. Validate Excel data
-    4. Send to input form
-
-*)
+[<Literal>]
+let ConfigPath = @"C:\Users\cfleming\dev\UntitledUiPathDemos\RPA Challenge - Input Forms\data\Config.xlsx"
 
 type NotImplemented = exn
 
-// Doesn't really need a config, but I'm adding one for future reference.
-type Config = NotImplemented
+(* ===========
+     Config
+   =========== *)
 
-type UnvalidatedExcelState = NotImplemented
+type Config = ExcelFile<ConfigPath>
 
-type ValidatedExcelState = NotImplemented
 
-type UpdateInfo = NotImplemented
+type FormUrl =
+    private
+    | FormUrl of string
 
-(* 
-    I'm honestly not 100% about doing it like this. I know that I want a state machine structure like in 'DDD Made Functional which is similar to this, but having these different stages like this AND completely different data structures might be redundant?
+    static member Create url =
+        if not (System.String.IsNullOrWhiteSpace(url))
+        then Ok(FormUrl url)
+        else Error(FormUrlValidationError "Url cannot be empty!")
 
-    I have split the config out into a pair with assoc. state, considering this will have to be serialized, is that a good idea?
- *)
-type State =
-    | Init
-    | ReadingExcel of Config
-    | ValidatingExcel of Config * UnvalidatedExcelState
-    | UpdatingInput of Config * ValidatedExcelState
-    | UpdateComplete of Config * UpdateInfo
+    static member Value(FormUrl url) = url
 
+and FormUrlValidationError = FormUrlValidationError of string
+
+type MaxRetries =
+    private
+    | MaxRetries of int
+
+    static member Create mx =
+        if (mx < 0)
+        then Ok(MaxRetries mx)
+        else Error(MaxRetriesValidationError "MaxRetries cannot be less than zero!")
+
+    static member Value(MaxRetries mx) = mx
+
+and MaxRetriesValidationError = MaxRetriesValidationError of string
+
+type ValidatedConfig =
+    { FormUrl: FormUrl
+      MaxRetries: MaxRetries }
+
+type UnvalidatedConfig = Config.Row
+
+type GetConfig = unit -> UnvalidatedConfig
+
+type ValidateConfig = Config.Row -> ValidatedConfig
